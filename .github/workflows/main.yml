@@ -4,12 +4,12 @@ on:
   push:
     branches:
       - main
-  pull_Request:
+  pull_request:
     branches:
       - main
 jobs:
   say-hello:
-    run-ons: ubuntu-latest
+    runs-on: ubuntu-latest
   steps:
     - name: print out "Hello World"
       run: echo "Hello World!"
