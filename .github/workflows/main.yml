@@ -9,7 +9,7 @@ on:
       - main
 jobs:
   say-hello:
-    runs-on: ubuntu-latest
+    runs-on: ["self-hosted","Linux","x64"]
     steps:
       - name: print out "Hello World"
         run: echo "Hello World!"
