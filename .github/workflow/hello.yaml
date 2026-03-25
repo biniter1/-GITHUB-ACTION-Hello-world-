@@ -1,0 +1,29 @@
+name: Hello world CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_Request:
+    branches:
+      - main
+jobs:
+  say-hello:
+    run-ons: ubuntu-latest
+  steps:
+    - name: print out "Hello World"
+      run: echo "Hello World!"
+    - name: print out info of environment
+      run: |
+        echo "Hệ điều hành: $(uname -a)"
+        echo "Thự mục hiện tại: $(pwd)"
+        echo "User hiện tại: $(whoami)"
+
+    # uses: sử dụng những action có sẵn hoặc ai đó viết, tức là 1 chuỗi các step
+    # actions/checkout : clone code về runner để dưới runner có code để thao tác
+    # v4 version ổn định của checkout
+    - name: Checkout source code
+      uses: actions/checkout@v4
+
+    - name: List file
+      run: ls -la
