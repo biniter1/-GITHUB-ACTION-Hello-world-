@@ -1,12 +1,22 @@
 name: Hello world CI
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
+  #   branches:
+  #     - main
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Chọn môi trường deploy"
+        required: true
+        default: "dev"
+      version:
+        description: "Chọn version deploy"
+        required: true
+        default: "v1"
 jobs:
   say-hello:
     runs-on: ["self-hosted","Linux","x64"]
